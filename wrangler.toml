@@ -1,5 +1,5 @@
 name = "cfw-bun-hono"
-compatibility_date = "2023-12-01"
+compatibility_date = "2024-12-01"
 "main" = "src/index.ts"
 # [vars]
 # MY_VAR = "my-variable"
