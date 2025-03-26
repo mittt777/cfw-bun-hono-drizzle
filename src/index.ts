@@ -1,4 +1,5 @@
 import { Hono } from 'hono';
+import { cors } from "hono/cors";
 import {streamSSE } from 'hono/streaming';
 import postgres from "postgres";
 
@@ -8,6 +9,14 @@ const sql = postgres(
 );
 //"postgresql://postgres.nfzomzhmgexrwhdgpexo:GqSrLZbwWtIrwy7H@aws-0-ap-southeast-1.pooler.supabase.com:6543/postgres"
 const app = new Hono()
+
+app.use(
+  "/*",
+  cors({
+    origin: "*",
+  }),
+);
+
 
 app.get('/ss', async (c) => {
   const resp = await sql`
