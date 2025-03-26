@@ -40,7 +40,7 @@ app.get('/sse', async (c) => {
       await stream.writeSSE({
         data: String(id++)
       })
-      await stream.sleep(100)
+      await stream.sleep(2000)
     }
   })
 })
